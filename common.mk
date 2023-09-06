@@ -318,6 +318,9 @@ PRODUCT_BOOT_JARS += \
 # OnePlus wrapper
 PRODUCT_BOOT_JARS += \
     oplus-support-wrapper
+    
+# OPLUS camera
+$(call inherit-product, vendor/oneplus/camera/camera-vendor.mk)    
 
 # Overlays
 $(call inherit-product, hardware/oplus/overlay/qssi/qssi.mk)
@@ -356,6 +359,10 @@ PRODUCT_PACKAGES += \
 # QTI service tracker
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.servicetracker@1.2.vendor
+    
+# Remove unwanted packages
+PRODUCT_PACKAGES += \
+    RemovePackages
 
 # RIL
 PRODUCT_PACKAGES += \
